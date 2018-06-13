@@ -85,7 +85,7 @@ public class LinkedList2{
     } // detectloop
     
 	// reverse linked list
-	public Node reverseLL(Node n) {
+	public void reverseLL() {
 		Node prev = null;
 		Node current = head;
 		Node next = null;
@@ -97,9 +97,6 @@ public class LinkedList2{
 			current = next; 
 		}
 		
-		n = prev;
-		
-		return n;
 	} // reverseLL
 	
     void printList(){
