@@ -1,6 +1,7 @@
 import java.util.Iterator;
 
 
+
 public class LinkedList2{
     static Node head;
 
@@ -82,7 +83,24 @@ public class LinkedList2{
         System.out.println("Loop not found");
 
     } // detectloop
-
+    
+	// reverse linked list
+	public void reverseLL() {
+		Node prev = null;
+		Node current = head;
+		Node next = null;
+		
+		while(current != null) {
+			next = current.next;
+			current.next = prev;
+			prev = current;
+			current = next; 
+		}
+		
+		//n = prev;
+		
+	} // reverseLL
+	
     void printList(){
         Node last = head;        
         while(last != null){
