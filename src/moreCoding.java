@@ -22,6 +22,9 @@ public class moreCoding{
         int m = 4;
         float avg = avgofMgrps(arr, m);
         System.out.println("Average of " + m + " groups in " + Arrays.toString(arr) + " is " + avg);
+        
+        // 3. Given an array and target, find all pairs whose sum is equal to target
+        findAllPairs(new int[] {2, 4, 4, 6, 5, -10, 8, 5, 10,20}, 10);
     } // main
 
     // 1. Reverse linked list
@@ -44,11 +47,34 @@ public class moreCoding{
     		avgSum = avgSum + (sum/m);
     	}
     	
-    	return (avgSum / (arr.length - m + 1));
+    	//number of m size groups
+    	int s = arr.length - m + 1;
+    	
+    	return (avgSum / s);
     	
     } // avgOfMgrps
     
     // 3. Given an array and target, find all pairs whose sum is equal to target.
+    public static void findAllPairs(int []arr, int target) {
+    	Arrays.sort(arr);
+    	int start = 0;
+    	int end = arr.length - 1;
+    	
+    	while(start < end) {
+    		
+    		if(arr[start] + arr[end] == target) {
+    			System.out.println(arr[start] + " + " + arr[end] + " = " + target);
+    			start++;
+    			end--;
+    		}
+    		else if(arr[start] + arr[end] < target) {
+    			start++;
+    		}
+    		else if(arr[start] + arr[end] > target) {
+    			end--;
+    		}
+    	}
+    } // findAllPairs
 
     // 4. Brackets Matching
 
